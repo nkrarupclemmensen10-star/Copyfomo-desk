@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>chief · paper desk</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%230B0B0F%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2218%22 font-family=%22sans-serif%22 font-weight=%22800%22 fill=%22white%22 text-anchor=%22middle%22%3Ec%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="logo">c</div>
+      <div>
+        <div class="name">chief · paper desk</div>
+        <span class="pill">PAPER · kopi-mode</span>
+      </div>
+    </div>
+    <div class="upd" title="Siden opdateres med jævne mellemrum, ikke live">
+      <span class="dot"></span><span id="upd">Opdateret —</span>
+      <div class="upd-sub" id="updSub">opdateres periodisk · ikke live</div>
+    </div>
+  </header>
+
+  <div class="marquee" aria-label="Fulgte tradere"><div class="track" id="ticker"></div></div>
+
+  <section class="hero">
+    <div class="muted small" id="heroLine">—</div>
+    <div class="equity"><span id="eqInt">$—</span><span class="dec" id="eqDec"></span>
+      <span class="badge" id="delta">—</span></div>
+    <div class="sub" id="subLine">—</div>
+    <div class="stats" id="stats"></div>
+  </section>
+
+  <section class="card">
+    <div class="card-h"><h2>Værdi over tid</h2>
+      <div class="legend"><span><i class="lg-g"></i>værdi</span><span><i class="lg-d"></i>startkapital</span></div></div>
+    <div class="chart"><svg id="chart" preserveAspectRatio="none"></svg><div class="tip" id="tip"></div></div>
+    <div class="muted xs" id="chartNote"></div>
+  </section>
+
+  <section class="card">
+    <div class="card-h"><h2>Største vindere</h2><span class="muted xs">åbne positioner</span></div>
+    <div id="winners"></div>
+  </section>
+
+  <section class="card">
+    <div class="card-h"><h2>Tradere</h2><span class="muted xs" id="trCount"></span></div>
+    <div class="seg" id="seg">
+      <button data-f="FOLLOWING" class="on">Fulgt</button><button data-f="FIRED">Fyret</button><button data-f="ALL">Alle</button>
+    </div>
+    <div class="thead"><span>trader</span><span>kopier</span><span>ind</span><span>nu</span></div>
+    <div id="traders"></div>
+    <button class="more" id="more">Vis flere</button>
+    <div class="muted xs" style="margin-top:8px">kopier = handler spejlet fra traderen · ind = traderens pulje · nu = pulje + kopi-P&amp;L. En del af gevinsten kan komme fra deskens egne tilkøb (dip-buy) i puljen.</div>
+  </section>
+
+  <section class="card">
+    <div class="card-h"><h2>Kopi-log</h2><span class="muted xs">seneste handlinger på desken</span></div>
+    <div id="log"></div>
+  </section>
+
+  <footer>Papirpenge — ingen rigtige handler. Ikke en garanti for fremtidigt afkast.
+    <div class="xs" id="foot"></div></footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
